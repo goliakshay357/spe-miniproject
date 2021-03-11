@@ -1,3 +1,41 @@
-<div class="container">
-  <p>calculator works!</p>
+<div class="container my-auto">
+  <div class="row">
+    <div class="col-5 mx-auto text-center">
+      <h2>Calculator</h2>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-5 mx-auto text-center">
+        <input type="number" id="number">
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-5 mx-auto text-center">
+      <div class="form-group">
+        <label for="sel1">Select list (select one):</label>
+        <select class="form-control" id="sel1">
+          <option value="1">Square root function - √x</option>
+          <option value="2">Factorial function - x!</option>
+          <option value="3">Natural logarithm (base е) - ln(x)</option>
+          <option value="4">Power function - x^b</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-5 mx-auto text-center">
+      <div class="button btn btn-primary" (click)="calculate()">Calculate</div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-5 mx-auto text-center">
+      <div class="text-center">
+        Answer: {{answer}}
+      </div>
+    </div>
+  </div>
 </div>
