@@ -15,19 +15,15 @@ stages{
         
     stage('Install dependencies') {
 	steps{
-        nodejs('nodejs') {
             sh 'npm install'
             echo "Modules installed"
-        }
 	}
         
     }
     stage('Build') {
 	steps{
-        nodejs('nodejs') {
             sh 'npm run build'
             echo "Build completed"
-        }
 	}
         
     }
