@@ -1,4 +1,12 @@
-node(){
+pipeline{
+
+environment { 
+        registry = "goliakshay357/mini_project" 
+        registryCredential = 'dockerhubIDGoli' 
+        dockerImage = '' 
+    }
+
+stages{
     stage('Cloning Git') {
         checkout scm
     }
@@ -19,23 +27,20 @@ node(){
     }
 
     stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-
-        app = docker.build("goliakshay357/mini-project")
+	dockerImage = docker.build registry + ":$BUILD_NUMBER" 
     }
 
 
     stage('Push Image'){
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('', 'goliakshay357') {
+        docker.withRegistry('',registryCredential) {
             app.push()
         }
     }
-
+    stage('Cleaning up') { 
+            steps { 
+                sh "docker rmi $registry:$BUILD_NUMBER" 
+            }
+        } 
 
 
     stage('Package Build') {
@@ -52,13 +57,4 @@ node(){
         stash allowEmpty: true, includes: 'bundle.tar.gz', name: 'buildArtifacts'
     }
 }
-
-node('awsnode') {
-    echo 'Unstash'
-    unstash 'buildArtifacts'
-    echo 'Artifacts copied'
-
-    echo 'Copy'
-    sh "yes | sudo cp -R bundle.tar.gz /var/www/html && cd /var/www/html && sudo tar -xvf bundle.tar.gz"
-    echo 'Copy completed'
 }
