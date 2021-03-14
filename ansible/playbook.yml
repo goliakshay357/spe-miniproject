@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+    - name: Pull Docker image
+      docker_image:
+        name: goliakshay357/mini-project:latest
+        source: pull
+
+    - name: Create Container
+      docker_container:
+        name: "mini-project"
+        image: "goliakshay357/mini-project:latest"
+        state: present
