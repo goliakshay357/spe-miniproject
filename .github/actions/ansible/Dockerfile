@@ -7,4 +7,4 @@ RUN apk add python3 py3-pip
 RUN pip3 install --upgrade paramiko
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["sh", "/entrypoint.sh"]
