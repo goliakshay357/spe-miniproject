@@ -9,7 +9,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: ./.github/actions/ansible
-      env:
-        VAULT_PASS: ${{ secrets.VAULT_PASS }}
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: ansible/playbook.yml
+          directory: ./
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          inventory: |
+            [all]
+            13.235.245.81 ansible_user=ubuntu
+
+          vault_password: passwd
+          options: |
+            --verbose
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - uses: ./.github/actions/ansible
+#       env:
+#         VAULT_PASS: ${{ secrets.VAULT_PASS }}

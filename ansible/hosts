@@ -1,8 +1,0 @@
-[aws]
-ec2-13-235-245-81.ap-south-1.compute.amazonaws.com
-
-[all:vars]
-ansible_connection=ssh
-ansible_user=ubuntu
-ansible_ssh_pass=slave-spe
-ansible_become_pass=slave-spe
