@@ -8,15 +8,11 @@ RUN pip3 install --upgrade paramiko
 
 COPY hosts /hosts
 COPY ansible.cfg /etc/ansible/ansible.cfg
-COPY ubuntu.pem /ubuntu.pem
 
-RUN chmod 400 /ubuntu.pem
+RUN mkdir ~/.ssh
+COPY ubuntu.pem ~/.ssh/ubuntu.pem
 
-RUN ansible --version
-
-RUN ansible aws --list-hosts
-
-RUN ansible aws -m ping
+RUN chmod 400 ~/.ssh/ubuntu.pem
 
 COPY entrypoint.sh /entrypoint.sh
 
