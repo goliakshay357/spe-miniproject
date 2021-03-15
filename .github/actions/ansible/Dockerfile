@@ -12,6 +12,8 @@ COPY ansible.cfg /etc/ansible/ansible.cfg
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN ansible --version
+
 RUN ansible aws --list-hosts
 
 RUN ansible aws -m ping
