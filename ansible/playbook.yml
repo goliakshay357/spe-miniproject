@@ -13,4 +13,4 @@
       docker_container:
         name: "mini-project"
         image: "goliakshay357/mini-project:latest"
-        state: present
+        state: running
