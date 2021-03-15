@@ -1,0 +1,17 @@
+---
+- name: Deploy Docker Image
+  hosts: all
+  gather_facts: false
+
+  tasks:
+
+  - name: pull an image
+    docker_image:
+      name: pacur/centos-7
+
+   - name: Pull latest docker containers
+      docker_container:
+        name: "mini-project"
+        image: ""
+        command: ""
+        state: present
