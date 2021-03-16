@@ -1,7 +1,5 @@
-name: 'Ansible'
-description: 'Runs an Ansible playbook' 
+name: "Ansible"
+description: "Runs an Ansible playbook"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ secrets.SSH_PASSWORD }}
+  using: "docker"
+  image: "Dockerfile"
