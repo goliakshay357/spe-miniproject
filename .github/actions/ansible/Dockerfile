@@ -7,10 +7,6 @@ RUN apk add python3 py3-pip openssh-client sshpass
 RUN pip3 install --upgrade paramiko
 RUN pip3 install docker
 
-RUN echo $SSH_PASSWORD
-
-RUN echo "testing"
-
 COPY hosts /hosts
 
 COPY ansible.cfg /etc/ansible/ansible.cfg
@@ -21,6 +17,6 @@ RUN ansible --version
 
 RUN ansible aws --list-hosts
 
-RUN ansible aws -m ping
+# RUN ansible aws -m ping
 
 CMD ["sh", "/entrypoint.sh"]
