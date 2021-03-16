@@ -53,5 +53,4 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./.github/actions/ansible
       with:
-        ansible_ssh_pass: ${{ secrets.SSH_PASSWORD }}
-        ansible_become_pass: ${{ secrets.SSH_PASSWORD }}
+        SSH_PASS: ${{ secrets.SSH_PASSWORD }}
