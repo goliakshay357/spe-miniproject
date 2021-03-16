@@ -11,4 +11,4 @@
       shell: docker image rm -f goliakshay357/mini-project:latest
 
     - name: create docker image
-      shell: docker run -d --name mini-project goliakshay357/mini-project:latest
+      shell: docker run -d -p 80:80 --name mini-project goliakshay357/mini-project:latest
