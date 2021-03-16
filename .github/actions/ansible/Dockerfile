@@ -7,6 +7,10 @@ RUN apk add python3 py3-pip openssh-client sshpass
 RUN pip3 install --upgrade paramiko
 RUN pip3 install docker
 
+RUN echo $SSH_PASSWORD
+
+RUN echo "testing"
+
 COPY hosts /hosts
 
 COPY ansible.cfg /etc/ansible/ansible.cfg
