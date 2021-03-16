@@ -48,7 +48,10 @@ jobs:
 
     needs: build
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v2
     - uses: ./.github/actions/ansible
+      with:
+        ansible_ssh_pass: ${{ secrets.SSH_PASSWORD }}
+        ansible_become_pass: ${{ secrets.SSH_PASSWORD }}
