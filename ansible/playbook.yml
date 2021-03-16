@@ -6,7 +6,7 @@
     - name: stop previous version docker
       shell: docker stop mini-project
     - name: remove stopped container
-      shell: docker rm -f mini-project	  
+      shell: docker rm -f mini-project
     - name: remove docker images
       shell: docker image rm -f goliakshay357/mini-project:latest
 
