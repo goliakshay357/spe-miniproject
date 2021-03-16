@@ -9,8 +9,8 @@ RUN pip3 install docker
 
 COPY hosts /hosts
 
-RUN echo "ansible_ssh_pass=$SSH_PASS" >> /hosts
-RUN echo "ansible_become_pass=$SSH_PASS" >> /hosts
+RUN echo "ansible_ssh_pass=$1" >> /hosts
+RUN echo "ansible_become_pass=$1" >> /hosts
 
 COPY ansible.cfg /etc/ansible/ansible.cfg
 

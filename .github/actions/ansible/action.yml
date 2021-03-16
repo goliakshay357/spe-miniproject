@@ -3,3 +3,5 @@ description: 'Runs an Ansible playbook'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ secrets.SSH_PASSWORD }}
