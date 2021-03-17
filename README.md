@@ -1,4 +1,6 @@
-# MiniProject
+# MiniProject - Scientific Calculator with DevOps
+
+<p align="center"><img src="https://user-images.githubusercontent.com/32712438/111516439-e81ded00-8779-11eb-87ad-ba58fffc7aa7.png" /></p>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
