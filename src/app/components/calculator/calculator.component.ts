@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RestService} from '../../services/rest.service';
 
 @Component({
   selector: 'app-calculator',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _elk:RestService) { }
   answer:any;
 
   ngOnInit(): void {
