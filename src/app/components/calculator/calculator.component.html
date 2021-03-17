@@ -1,21 +1,34 @@
 <div class="container my-auto">
-  <div class="row">
-    <div class="col-5 mx-auto text-center">
-      <h2>Calculator</h2>
+  <div class="row mt-3">
+    <div class="col-10 mx-auto text-center">
+      <img src="https://www.iiitb.ac.in/includefiles/userfiles/images/iiitb_logo.png" width=100>
     </div>
   </div>
 
+  <div class="row mt-3">
+    <div class="col-10 mx-auto text-center">
+      <h2 class="slab">CS 816 - Software Production Engineering</h2>
+    </div>
+  </div>
+  
   <div class="row">
+    <div class="col-10 mx-auto text-center">
+      <h4 class="roboto">Mini Project - Scientific Calculator with DevOps</h4>
+    </div>
+  </div>
+
+  <div class="row mt-5">
       <div class="col-5 mx-auto text-center">
-        <input type="number" id="number">
+        <p class="slab"><strong>Enter the Number</strong></p>
+        <input class="slab form-control" type="number" id="number">
       </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-5 mx-auto text-center">
       <div class="form-group">
-        <label for="sel1">Select list (select one):</label>
-        <select class="form-control" id="sel1">
+        <label class="slab" for="sel1">Select Function (select one):</label>
+        <select class="form-control slab" id="sel1">
           <option value="1">Square root function - √x</option>
           <option value="2">Factorial function - x!</option>
           <option value="3">Natural logarithm (base е) - ln(x)</option>
@@ -27,14 +40,21 @@
 
   <div class="row">
     <div class="col-5 mx-auto text-center">
-      <div class="button btn btn-primary" (click)="calculate()">Calculate</div>
+      <div class="button btn btn-outline-primary" (click)="calculate()">Calculate</div>
     </div>
   </div>
 
   <div class="row mt-5">
     <div class="col-5 mx-auto text-center">
       <div class="text-center">
-        Answer: {{answer}}
+        <p class="slab"><strong>Answer:</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5 mx-auto text-center">
+      <div class="text-center">
+        <h4 class="slab"><strong>{{answer}}</strong></h4>
       </div>
     </div>
   </div>
