@@ -7,12 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class RestService {
 
   constructor(private http: HttpClient) { 
-    let data ={
-      "function_type": "square_root"
-   }
-    this.elkStackData(data);
-    console.log("ELK PUSHED");
-    
+
   }
 
   async elkStackData(data_stream:any) {

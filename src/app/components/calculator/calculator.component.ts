@@ -28,21 +28,40 @@ export class CalculatorComponent implements OnInit {
     // Sqrt
     if(selectValue === "1"){
        this.answer=Math.sqrt(number); 
+
+      let data ={
+        "function_type": "square_root"
+      }
+      this._elk.elkStackData(data);
     }
 
     // Factorial
     if(selectValue === "2"){
       this.answer= this.sFact(number); 
+
+      let data ={
+        "function_type": "factorial"
+      }
+      this._elk.elkStackData(data);
     }
     
     // Natural Logerithm
     if(selectValue === "3"){
       this.answer= Math.log(number); 
+
+      let data ={
+        "function_type": "power_function"
+      }
+      this._elk.elkStackData(data);
     }
     
     // Power function
     if(selectValue === "4"){
       this.answer= Math.pow(number, 3); 
+      let data ={
+        "function_type": "natural_log"
+      }
+      this._elk.elkStackData(data);
     }
     
   }
